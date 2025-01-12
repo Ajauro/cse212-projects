@@ -12,6 +12,11 @@ public static class StandardDeviation {
         Console.WriteLine(StandardDeviation3(numbers)); // Should be 147.322 
     }
 
+    //o laço foreach percorre todos os elementos do array: O(n)
+    //ao calcular a média sendo operações matematicas: O(1)
+    //segundo laço foreach, percorrendo todos os elementos e fazendo calculos: O(n)
+    //calculando a variance, sendo uma operação: O(1)
+    // O(n) + O(n) + O(1) = O(n)
     private static double StandardDeviation1(int[] numbers) {
         var total = 0.0;
         var count = 0;
@@ -30,8 +35,13 @@ public static class StandardDeviation {
         return Math.Sqrt(variance);
     }
 
+    // possui um laço foreach externo e interno, e ambos percorrem cada elemento da array
+    //externo percorre todos os elementos, e o interno percorre novamente todos os elementos
+    //para cada interação do laço externo: O(n)
+    //se o array tem n elementos, o laço interno executa n interações para cada uma das n interações do laço externo.
+    // total(externo + interno): O(n * n) = O(n^2)
     private static double StandardDeviation2(int[] numbers) {
-        var sumSquaredDifferences = 0.0;
+        var sumSquaredDifferences = 0.0; //acumula a soma das diferenças quadradas em relação a media
         var countNumbers = 0;
         foreach (var number in numbers) {
             var total = 0;
@@ -50,9 +60,12 @@ public static class StandardDeviation {
         return Math.Sqrt(variance);
     }
 
+    //o laço foreach percorre todos os elementos contendo operações matematicas internas
+    //calculando a variance, sendo uma operação: O(1)
+    // O(n) + O(n) + O(1) = O(n)
     private static double StandardDeviation3(int[] numbers) {
         var count = numbers.Length;
-        var avg = (double)numbers.Sum() / count;
+        var avg = (double)numbers.Sum() / count; //number.Sum percorre todos os elementos 1x para fazer a soma
         var sumSquaredDifferences = 0.0;
         foreach (var number in numbers) {
             sumSquaredDifferences += Math.Pow(number - avg, 2);

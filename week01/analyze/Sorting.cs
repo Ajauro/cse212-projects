@@ -15,3 +15,6 @@
         }
     }
 }
+
+// é tipo um bubble sort.
+// cada laço faz uma comparação O(1)
