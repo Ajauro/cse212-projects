@@ -55,7 +55,7 @@ public class RotateListRightTests
     }
 
     [TestMethod]
-    public void TestRotateListRight_Rotate9()
+    public void TestRotateListRight_Rotate9() //aproved
     {
         List<int> numbers = new() { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
         Arrays.RotateListRight(numbers, 9);
