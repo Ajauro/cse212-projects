@@ -4,8 +4,8 @@ Console.WriteLine(MysteryStack1.Run("stressed"));
 Console.WriteLine(MysteryStack1.Run("a nut for a jar of tuna"));
 
 Console.WriteLine("\n======================\nMysteryStack2\n======================");
-Console.WriteLine(MysteryStack2.Run("5 3 7 + *"));
-Console.WriteLine(MysteryStack2.Run("6 2 + 5 3 - /"));
+Console.WriteLine(MysteryStack2.Run("5 3 7 + *")); // resultado - 50: 3+7=10*5=50
+Console.WriteLine(MysteryStack2.Run("6 2 + 5 3 - /")); // resultado - 4: 6+2=8 5-3=2 8/2=4
 try {
     MysteryStack2.Run("3 +");
     Console.WriteLine("WRONG: expected ApplicationException: Invalid Case 1!");
